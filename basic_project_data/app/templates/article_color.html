@@ -1,0 +1,34 @@
+<body style="
+    {% if session.get('background') %}
+        background-color:{{ session.get('background') }}
+    {% endif %}">
+
+
+    Select text color preference: <br>
+    <form action="" method="post">
+        <select name="background" onchange="submit()">
+            <option value="">----</option>
+            <option value="red"
+                {% if session.get('background') == 'red' %}
+                    selected
+                {% endif %}>
+                red</option>
+
+            <option value="blue"
+                {% if session.get('background') == 'blue' %}
+                    selected
+                {% endif %}>
+                blue</option>
+
+            <option value="green"
+                {% if session.get('background') == 'green' %}
+                    selected
+                {% endif %}>
+                green</option>
+        </select>
+    </form>
+
+    <h1>Title</h1>
+    <p>Text</p>
+
+</body>

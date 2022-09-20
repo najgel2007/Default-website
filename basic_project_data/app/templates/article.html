@@ -1,0 +1,34 @@
+<body style="
+    {% if request.cookies.get('font') %}
+        font-family:{{ request.cookies.get('font') }}
+    {% endif %}">
+
+    Select Font Preference: <br>
+    <form action="" method="post">
+        <select name="font" onchange="submit()">
+            <option value="">----</option>
+            <option value="consolas"
+                {% if request.cookies.get('font') == 'consolas' %}
+                    selected
+                {% endif %}>
+                consolas</option>
+
+            <option value="arial"
+                {% if request.cookies.get('font') == 'arial' %}
+                    selected
+                {% endif %}>
+                arial</option>
+
+            <option value="verdana"
+                {% if request.cookies.get('font') == 'verdana' %}
+                    selected
+                {% endif %}>
+                verdana</option>
+        </select>
+    </form>
+
+
+    <h1>Title</h1>
+    <p>Text</p>
+
+</body>
